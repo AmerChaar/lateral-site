@@ -68,15 +68,39 @@ a.cell:hover{background:#E9E3FF}
 @media (prefers-reduced-motion: reduce){
   .ln > span,.fu,.mk,.orb,.spin,.dash,.pk,.ring,.n2,.n3,.n4,.blink,.tick{animation:none}
 }
-@media (max-width: 860px){.badge{display:none}}
+@media (max-width: 860px){.badge{display:none !important}}
+@media (max-width: 720px){
+  .outer{padding:8px !important}
+  .nav{display:grid !important;grid-template-columns:repeat(4,1fr)}
+  .navb{grid-column:1 / -1;padding:14px 16px !important;border-bottom:1px solid #282828}
+  .nav a.cell{justify-content:center;padding:0 4px !important;min-height:46px !important;font-size:10px !important;letter-spacing:0.04em !important;border-left:1px solid #282828 !important}
+  .nav a.cell:nth-of-type(1){border-left:0 !important}
+  .nav a.navbook{grid-column:1 / -1;border-left:0 !important;border-top:1px solid #282828;background:#E9E3FF;font-size:11px !important}
+  .hero{padding:52px 20px 48px !important}
+  .hero p{font-size:17px !important;margin-top:24px !important}
+  .figbox{margin:0 16px 48px !important;padding:56px 16px 32px !important}
+  .fig{flex-direction:column !important;align-items:stretch !important}
+  .fig > div:not(.cx):not(.cxd){width:100%}
+  .cx,.cxd{margin:0 auto !important}
+  .cx{width:2px !important;height:30px !important}
+  .cxd{width:14px !important;height:46px !important}
+  .cxd .dash{left:6px !important;right:auto !important;top:0 !important;bottom:0 !important;width:2px !important;height:auto !important;background-image:linear-gradient(#5A3EC8 50%,transparent 50%) !important;background-size:100% 12px !important;animation:none !important}
+  .cxd .sq,.cxd .ring{top:50% !important;margin-top:-7px !important}
+  .cxd > div:last-child,.cx > .pk{display:none !important}
+  .lab{flex:1 1 100% !important;border-right:0 !important;border-bottom:1px solid #282828;padding:14px 20px !important}
+  .bod{padding:28px 20px 32px !important}
+  .trow > div{flex:1 1 100% !important;border-right:0 !important}
+  .trow > div + div{border-top:1px solid #B3B3AF}
+  .bk{padding:72px 20px !important}
+}
 </style>
 </head>
 <body>
-<div style="background: #F5F5ED; color: #282828; font-family: 'Hanken Grotesk', sans-serif; line-height: 1.5; width: 100%; box-sizing: border-box; padding: 12px">
+<div class="outer" style="background: #F5F5ED; color: #282828; font-family: 'Hanken Grotesk', sans-serif; line-height: 1.5; width: 100%; box-sizing: border-box; padding: 12px">
 <div style="position: relative; border: 1px solid #282828; box-sizing: border-box; overflow: hidden">
 
-<div style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #282828; background: #F5F5ED">
-<div style="display: flex; align-items: center; gap: 12px; padding: 14px 22px; flex: 1 1 240px">
+<div class="nav" style="display: flex; flex-wrap: wrap; border-bottom: 1px solid #282828; background: #F5F5ED">
+<div class="navb" style="display: flex; align-items: center; gap: 12px; padding: 14px 22px; flex: 1 1 240px">
 <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M14 6 V50 H38" fill="none" stroke="#282828" stroke-width="7"/><rect x="42" y="43" width="14" height="14" fill="#BBA6FF"/></svg>
 <div style="font-weight: 700; font-size: 17px; letter-spacing: -0.01em; text-transform: uppercase">Lateral Consultants</div>
 </div>
@@ -84,7 +108,7 @@ a.cell:hover{background:#E9E3FF}
 <a class="cell" href="#process" style="display: flex; align-items: center; padding: 0 22px; border-left: 1px solid #282828; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #282828; text-decoration: none; min-height: 52px">Process</a>
 <a class="cell" href="#build" style="display: flex; align-items: center; padding: 0 22px; border-left: 1px solid #282828; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #282828; text-decoration: none; min-height: 52px">Build</a>
 <a class="cell" href="#privacy" style="display: flex; align-items: center; padding: 0 22px; border-left: 1px solid #282828; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #282828; text-decoration: none; min-height: 52px">Privacy</a>
-<a class="cell" href="#book" style="display: flex; align-items: center; gap: 10px; padding: 0 22px; border-left: 1px solid #282828; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #5A3EC8; font-weight: 500; text-decoration: none; min-height: 52px">Book a call <span>&rarr;</span></a>
+<a class="cell navbook" href="#book" style="display: flex; align-items: center; gap: 10px; padding: 0 22px; border-left: 1px solid #282828; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #5A3EC8; font-weight: 500; text-decoration: none; min-height: 52px">Book a call <span>&rarr;</span></a>
 </div>
 
 <div style="position: relative; overflow: hidden">
@@ -97,7 +121,7 @@ a.cell:hover{background:#E9E3FF}
 </svg>
 <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 600">&rarr;</div>
 </a>
-<div style="position: relative; padding: 104px 32px 64px; text-align: center; box-sizing: border-box">
+<div class="hero" style="position: relative; padding: 104px 32px 64px; text-align: center; box-sizing: border-box">
 <div class="fu" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A4A47; margin-bottom: 30px; animation-delay: 0.1s">Sales to Finance handoff automation</div>
 <h1 style="margin: 0 auto; max-width: 1080px; font-size: clamp(40px, 7.6vw, 112px); line-height: 0.96; letter-spacing: -0.04em; font-weight: 700; text-transform: uppercase">
 <span class="ln"><span>The handoff is where</span></span>
@@ -111,15 +135,15 @@ a.cell:hover{background:#E9E3FF}
 </div>
 </div>
 
-<div class="rv" style="margin: 0 32px 72px; border: 1px solid #282828; background-color: #F5F5ED; background-image: radial-gradient(#B3B3AF 1px, transparent 1px); background-size: 24px 24px; padding: 72px 28px 56px; box-sizing: border-box; position: relative">
+<div class="rv figbox" style="margin: 0 32px 72px; border: 1px solid #282828; background-color: #F5F5ED; background-image: radial-gradient(#B3B3AF 1px, transparent 1px); background-size: 24px 24px; padding: 72px 28px 56px; box-sizing: border-box; position: relative">
 <div style="position: absolute; top: 12px; left: 16px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A4A47">Fig. 01 &middot; Path of a closed deal</div>
-<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0">
+<div class="fig" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0">
 <div style="background: #F5F5ED; border: 1px solid #282828; padding: 14px 20px; min-width: 150px; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47">01</div><div style="font-weight: 700; text-transform: uppercase; font-size: 18px; letter-spacing: -0.01em">Marketing</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47; margin-top: 4px">Lead captured</div></div>
-<div style="position: relative; width: 56px; height: 2px; background: #282828"><div class="pk" style="animation: pk1 8s linear infinite"></div></div>
+<div class="cx" style="position: relative; width: 56px; height: 2px; background: #282828"><div class="pk" style="animation: pk1 8s linear infinite"></div></div>
 <div class="n2" style="background: #F5F5ED; border: 1px solid #282828; padding: 14px 20px; min-width: 150px; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47">02</div><div style="font-weight: 700; text-transform: uppercase; font-size: 18px; letter-spacing: -0.01em">Sales</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47; margin-top: 4px">Deal closed</div></div>
-<div style="position: relative; display: flex; align-items: center; width: 150px; height: 14px"><div class="dash" style="position: absolute; left: 0; right: 0; top: 6px; height: 2px"></div><div style="position: absolute; left: 50%; top: 0; margin-left: -7px; width: 14px; height: 14px; background: #BBA6FF; border: 1.5px solid #282828; box-sizing: border-box"></div><div class="ring" style="left: 50%; top: 0; right: auto; bottom: auto; margin-left: -7px; width: 14px; height: 14px; position: absolute"></div><div style="position: absolute; left: 0; right: 0; top: 6px; height: 2px"><div class="pk" style="animation: pk2 8s linear infinite"></div></div></div>
+<div class="cxd" style="position: relative; display: flex; align-items: center; width: 150px; height: 14px"><div class="dash" style="position: absolute; left: 0; right: 0; top: 6px; height: 2px"></div><div class="sq" style="position: absolute; left: 50%; top: 0; margin-left: -7px; width: 14px; height: 14px; background: #BBA6FF; border: 1.5px solid #282828; box-sizing: border-box"></div><div class="ring" style="left: 50%; top: 0; right: auto; bottom: auto; margin-left: -7px; width: 14px; height: 14px; position: absolute"></div><div style="position: absolute; left: 0; right: 0; top: 6px; height: 2px"><div class="pk" style="animation: pk2 8s linear infinite"></div></div></div>
 <div class="n3" style="background: #F5F5ED; border: 1px solid #282828; padding: 14px 20px; min-width: 150px; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47">03</div><div style="font-weight: 700; text-transform: uppercase; font-size: 18px; letter-spacing: -0.01em">Finance</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47; margin-top: 4px">Invoice raised</div></div>
-<div style="position: relative; width: 56px; height: 2px; background: #282828"><div class="pk" style="animation: pk3 8s linear infinite"></div></div>
+<div class="cx" style="position: relative; width: 56px; height: 2px; background: #282828"><div class="pk" style="animation: pk3 8s linear infinite"></div></div>
 <div class="n4" style="background: #F5F5ED; border: 1px solid #282828; padding: 14px 20px; min-width: 150px; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47">04</div><div style="font-weight: 700; text-transform: uppercase; font-size: 18px; letter-spacing: -0.01em">Operations</div><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #4A4A47; margin-top: 4px">Work delivered</div></div>
 </div>
 <div style="margin: 40px auto 0; max-width: 380px; border: 1px solid #282828; background: #F5F5ED">
@@ -137,8 +161,8 @@ a.cell:hover{background:#E9E3FF}
 </div>
 
 <div id="problem" class="rv" style="display: flex; flex-wrap: wrap">
-<div style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[01] Problem</div></div>
-<div style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
+<div class="lab" style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[01] Problem</div></div>
+<div class="bod" style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
 <h2 style="margin: 0 0 28px; font-size: clamp(32px, 4.4vw, 56px); line-height: 1; letter-spacing: -0.035em; font-weight: 700; text-transform: uppercase; max-width: 780px">Every company has the same leaks, in its own way.</h2>
 <div style="border-top: 1px solid #B3B3AF">
 <div class="row" style="display: flex; gap: 20px; padding: 16px 12px; border-bottom: 1px solid #B3B3AF"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5A3EC8; min-width: 28px; font-weight: 500">A</div><div style="font-size: 20px; font-weight: 500">Deals close, but the invoice goes out days later.</div></div>
@@ -151,22 +175,22 @@ a.cell:hover{background:#E9E3FF}
 </div>
 
 <div class="rv" style="display: flex; flex-wrap: wrap; border-top: 1px solid #282828">
-<div style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[02] Where to begin</div></div>
-<div style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
+<div class="lab" style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[02] Where to begin</div></div>
+<div class="bod" style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
 <h2 style="margin: 0 0 12px; font-size: clamp(32px, 4.4vw, 56px); line-height: 1; letter-spacing: -0.035em; font-weight: 700; text-transform: uppercase; max-width: 780px">Start with one problem. Keep it small.</h2>
 <p style="margin: 0 0 28px; font-size: 17px; color: #4A4A47; max-width: 560px">Each starting point ends with a written summary. Carrying on is your decision.</p>
 <div style="border: 1px solid #282828">
-<div class="row" style="display: flex; flex-wrap: wrap">
+<div class="row trow" style="display: flex; flex-wrap: wrap">
 <div style="flex: 1 1 200px; padding: 18px; border-right: 1px solid #B3B3AF; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A4A47; margin-bottom: 6px">You have</div><div style="font-weight: 600; font-size: 17px">Late invoices after a deal closes.</div></div>
 <div style="flex: 1 1 240px; padding: 18px; border-right: 1px solid #B3B3AF; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A4A47; margin-bottom: 6px">Start with</div><div style="font-size: 15px">Handoff diagnosis. One flow mapped end to end from a sample export.</div></div>
 <div style="flex: 1 1 240px; padding: 18px; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; margin-bottom: 6px; font-weight: 500">Leads to</div><div style="font-size: 15px">An automated deal-to-invoice flow with reminders.</div></div>
 </div>
-<div class="row" style="display: flex; flex-wrap: wrap; border-top: 1px solid #B3B3AF">
+<div class="row trow" style="display: flex; flex-wrap: wrap; border-top: 1px solid #B3B3AF">
 <div style="flex: 1 1 200px; padding: 18px; border-right: 1px solid #B3B3AF; box-sizing: border-box"><div style="font-weight: 600; font-size: 17px">Numbers that do not match.</div></div>
 <div style="flex: 1 1 240px; padding: 18px; border-right: 1px solid #B3B3AF; box-sizing: border-box"><div style="font-size: 15px">Data audit. One pipeline export compared with one finance export.</div></div>
 <div style="flex: 1 1 240px; padding: 18px; box-sizing: border-box"><div style="font-size: 15px">CRM setup and field standards both teams share.</div></div>
 </div>
-<div class="row" style="display: flex; flex-wrap: wrap; border-top: 1px solid #B3B3AF">
+<div class="row trow" style="display: flex; flex-wrap: wrap; border-top: 1px solid #B3B3AF">
 <div style="flex: 1 1 200px; padding: 18px; border-right: 1px solid #B3B3AF; box-sizing: border-box"><div style="font-weight: 600; font-size: 17px">Reports that take a day.</div></div>
 <div style="flex: 1 1 240px; padding: 18px; border-right: 1px solid #B3B3AF; box-sizing: border-box"><div style="font-size: 15px">Reporting review. What leadership needs and where each number comes from.</div></div>
 <div style="flex: 1 1 240px; padding: 18px; box-sizing: border-box"><div style="font-size: 15px">Dashboards fed straight from your CRM and finance data.</div></div>
@@ -176,8 +200,8 @@ a.cell:hover{background:#E9E3FF}
 </div>
 
 <div id="process" class="rv" style="display: flex; flex-wrap: wrap; border-top: 1px solid #282828">
-<div style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[03] How it works</div></div>
-<div style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
+<div class="lab" style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[03] How it works</div></div>
+<div class="bod" style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
 <h2 style="margin: 0 0 32px; font-size: clamp(32px, 4.4vw, 56px); line-height: 1; letter-spacing: -0.035em; font-weight: 700; text-transform: uppercase; max-width: 780px">You know what happens before it happens.</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 20px">
 <div class="card" style="flex: 1 1 220px; border: 1px solid #282828; background: #F5F5ED"><div style="background: #282828; color: #F5F5ED; padding: 6px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase">Phase 01</div><div style="padding: 16px"><div style="font-weight: 700; font-size: 20px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: -0.01em">Intro call</div><div style="font-size: 15px; color: #4A4A47">You tell us where deals, invoices or reports get stuck. No preparation needed.</div></div></div>
@@ -189,8 +213,8 @@ a.cell:hover{background:#E9E3FF}
 </div>
 
 <div id="build" class="rv" style="display: flex; flex-wrap: wrap; border-top: 1px solid #282828">
-<div style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[04] What we build</div></div>
-<div style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
+<div class="lab" style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[04] What we build</div></div>
+<div class="bod" style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
 <h2 style="margin: 0 0 14px; font-size: clamp(32px, 4.4vw, 56px); line-height: 1; letter-spacing: -0.035em; font-weight: 700; text-transform: uppercase; max-width: 800px">Same method every time. Designed around you.</h2>
 <p style="margin: 0 0 28px; font-size: 17px; color: #4A4A47; max-width: 600px">Every company issues invoices and reports its numbers in its own way. We design for that, not from a template.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 20px">
@@ -204,8 +228,8 @@ a.cell:hover{background:#E9E3FF}
 
 <div id="privacy" class="rv" style="border-top: 1px solid #282828; background: #282828; color: #F5F5ED">
 <div style="display: flex; flex-wrap: wrap">
-<div style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #555552; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #CDBDFF; font-weight: 500">[05] Data privacy</div></div>
-<div style="flex: 1 1 520px; padding: 40px 32px; box-sizing: border-box">
+<div class="lab" style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #555552; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #CDBDFF; font-weight: 500">[05] Data privacy</div></div>
+<div class="bod" style="flex: 1 1 520px; padding: 40px 32px; box-sizing: border-box">
 <h2 style="margin: 0 0 32px; font-size: clamp(32px, 4.4vw, 56px); line-height: 1; letter-spacing: -0.035em; font-weight: 700; text-transform: uppercase">Your data stays with you.</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 28px">
 <div class="card" style="flex: 1 1 220px; border-top: 2px solid #BBA6FF; padding-top: 14px"><div style="font-weight: 700; font-size: 18px; margin-bottom: 6px">No logins</div><div style="font-size: 15px; color: #CFCFC8">We do not ask for access to your tools during the diagnosis.</div></div>
@@ -217,8 +241,8 @@ a.cell:hover{background:#E9E3FF}
 </div>
 
 <div class="rv" style="display: flex; flex-wrap: wrap; border-top: 1px solid #282828">
-<div style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[06] Who we are</div></div>
-<div style="flex: 1 1 520px; padding: 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 36px">
+<div class="lab" style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[06] Who we are</div></div>
+<div class="bod" style="flex: 1 1 520px; padding: 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 36px">
 <div style="flex: 1 1 280px">
 <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.02; letter-spacing: -0.03em; font-weight: 700; text-transform: uppercase">An independent practice. One point of contact.</h2>
 </div>
@@ -230,8 +254,8 @@ a.cell:hover{background:#E9E3FF}
 </div>
 
 <div class="rv" style="display: flex; flex-wrap: wrap; border-top: 1px solid #282828">
-<div style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[07] Questions</div></div>
-<div style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
+<div class="lab" style="flex: 0 0 240px; padding: 28px 24px; border-right: 1px solid #282828; box-sizing: border-box"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #5A3EC8; font-weight: 500">[07] Questions</div></div>
+<div class="bod" style="flex: 1 1 520px; padding: 32px; box-sizing: border-box">
 <div style="border-top: 1px solid #B3B3AF">
 <div class="row" style="padding: 18px 12px; border-bottom: 1px solid #B3B3AF"><div style="font-weight: 700; font-size: 18px; margin-bottom: 4px">Do you need access to our systems?</div><div style="font-size: 15px; color: #4A4A47; max-width: 720px">Not for the diagnosis. We work from a sample export. If a later build needs access, it is scoped and agreed in writing first.</div></div>
 <div class="row" style="padding: 18px 12px; border-bottom: 1px solid #B3B3AF"><div style="font-weight: 700; font-size: 18px; margin-bottom: 4px">Do you replace our CRM or finance software?</div><div style="font-size: 15px; color: #4A4A47; max-width: 720px">No. We work with what you already use, and only recommend a change if the tool itself causes the problem.</div></div>
@@ -242,7 +266,7 @@ a.cell:hover{background:#E9E3FF}
 </div>
 </div>
 
-<div id="book" style="position: relative; border-top: 1px solid #282828; padding: 104px 32px; text-align: center; box-sizing: border-box; background-color: #F5F5ED; background-image: radial-gradient(#B3B3AF 1px, transparent 1px); background-size: 24px 24px; overflow: hidden">
+<div id="book" class="bk" style="position: relative; border-top: 1px solid #282828; padding: 104px 32px; text-align: center; box-sizing: border-box; background-color: #F5F5ED; background-image: radial-gradient(#B3B3AF 1px, transparent 1px); background-size: 24px 24px; overflow: hidden">
 <div class="orb" style="position: absolute; bottom: -200px; left: 50%; margin-left: -380px; width: 760px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(187,166,255,0.7), rgba(187,166,255,0) 68%); filter: blur(30px)"></div>
 <div style="position: relative">
 <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #4A4A47; margin-bottom: 24px">[08] Contact</div>
